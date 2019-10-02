@@ -1,0 +1,86 @@
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+  source ~/.config/nvim/plugins/denite.vim
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+    let g:lightline = {
+          \   'colorscheme': 'one',
+          \   'active': {
+          \     'left': [ 
+          \               [ 'mode', 'paste' ],
+          \               [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+          \     ]
+          \   },
+          \   'component_function': {
+          \     'gitbranch': 'fugitive#head'
+          \   },
+          \ }
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = "neoclide/coc.nvim"
+merge = 0
+rev = "release"
+build = './install.sh nightly'
+hook_add = '''
+    command! -nargs=0 Prettier :CocCommand prettier.formatFile
+    nnoremap <silent> gh :call <SID>show_documentation()<CR>
+    nmap <silent> gd <Plug>(coc-definition)
+'''
+
+[[plugins]]
+repo = 'fatih/vim-go'
+hook_add = '''
+    source ~/.config/nvim/plugins/vim-go.vim
+'''
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+hook_add = '''
+    hi typescriptFunction ctermfg=43
+    hi typescriptFuncDef ctermfg=43
+    hi typescriptPropietaryMethods ctermfg=43
+    hi typescriptConditional ctermfg=162
+    hi typescriptBranch ctermfg=169
+    hi typescriptParens ctermfg=169
+    hi typescriptBraces ctermfg=169
+    hi typescriptVars ctermfg=209
+'''
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+hook_add = '''
+    hi tsxTagName ctermfg=105
+    hi tsxTag ctermfg=103
+    hi tsxCloseTag ctermfg=103
+    hi tsxCloseString ctermfg=104
+'''
+
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
+
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'chr4/nginx.vim'
+
