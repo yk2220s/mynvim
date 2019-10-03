@@ -1,22 +1,23 @@
 " Settings
 " - Base
-set showcmd
-set hidden
-set noswapfile
-set nobackup
-set fenc=utf-8
-set encoding=UTF-8
 set autoread
-set number
-set wrap
-set smartindent
-set list
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-" set showmode
-set tabstop=4
-set shiftwidth=4
 set cmdheight=2
 set cursorline
+set clipboard=unnamed
+set encoding=UTF-8
+set fenc=utf-8
+set hidden
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set noswapfile
+set nobackup
+set number
+set shiftwidth=4
+set showcmd
+set smartindent
+" set showmode
+set tabstop=4
+set wrap
 nnoremap ; :
 nnoremap j gj
 nnoremap k gk
