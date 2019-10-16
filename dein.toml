@@ -13,18 +13,7 @@ repo = "airblade/vim-gitgutter"
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
-    let g:lightline = {
-          \   'colorscheme': 'one',
-          \   'active': {
-          \     'left': [ 
-          \               [ 'mode', 'paste' ],
-          \               [ 'gitbranch', 'readonly', 'filename', 'modified' ]
-          \     ]
-          \   },
-          \   'component_function': {
-          \     'gitbranch': 'fugitive#head'
-          \   },
-          \ }
+    source ~/.config/nvim/plugins/lightline.vim
 '''
 
 [[plugins]]
@@ -71,6 +60,10 @@ hook_add = '''
     hi tsxCloseTag ctermfg=103
     hi tsxCloseString ctermfg=104
 '''
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
 
 [[plugins]]
 repo = 'ekalinin/Dockerfile.vim'

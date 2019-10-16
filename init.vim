@@ -76,8 +76,10 @@ inoremap <C-f> <right>
 inoremap <C-d> <BS>
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
+inoremap <UP> <C-c>gka
+inoremap <DOWN> <C-c>gja
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap { {}<left>
+inoremap { {}<left><CR>
 inoremap ( ()<left>
 
 " - TerminalMode
