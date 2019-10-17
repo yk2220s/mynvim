@@ -79,8 +79,6 @@ inoremap <C-e> <C-o>$
 inoremap <UP> <C-c>gka
 inoremap <DOWN> <C-c>gja
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap { {}<left><CR>
-inoremap ( ()<left>
 
 " - TerminalMode
 tnoremap <Esc> <C-\><C-n>
