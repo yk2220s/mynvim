@@ -1,7 +1,7 @@
 {
   "coc.preferences.jumpCommand": "vsplit",
   "coc.preferences.formatOnSaveFiletypes": [
-    "css", "markdown", "Markdown", "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx", "vue"
+    "css", "markdown", "Markdown", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx"
   ],
   "suggest.noselect":false,
   "suggest.preferCompleteThanJumpPlaceholder":true,
