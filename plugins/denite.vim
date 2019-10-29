@@ -22,4 +22,28 @@ function! s:denite_my_settings() abort
 endfunction
 
 nnoremap [denite] <Nop>
-call denite#custom#option('default', 'prompt', '>')
+
+" use floating
+let s:denite_win_width_percent = 0.85
+let s:denite_win_height_percent = 0.7
+let s:denite_default_options = {
+    \ 'split': 'floating',
+    \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
+    \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
+    \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
+    \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
+    \ 'highlight_filter_background': 'DeniteFilter',
+    \ 'prompt': '/ ',
+    \ 'start_filter': v:true,
+    \ }
+let s:denite_option_array = []
+for [key, value] in items(s:denite_default_options)
+  call add(s:denite_option_array, '-'.key.'='.value)
+endfor
+call denite#custom#option('default', s:denite_default_options)
+
+call denite#custom#var('file/rec', 'command',
+    \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
+    \ [ '.git/', '.ropeproject/', '__pycache__/',
+    \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
