@@ -2,7 +2,7 @@
 autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
+  \ denite#do_map('do_action', 'vsplit')
   nnoremap <silent><buffer><expr> t
   \ denite#do_map('do_action', 'tabopen')
   nnoremap <silent><buffer><expr> s
@@ -22,9 +22,29 @@ function! s:denite_my_settings() abort
 endfunction
 
 nnoremap [denite] <Nop>
+call denite#custom#option('default', 'prompt', '>')
+
+" display
+autocmd FileType denite set winblend=15
+autocmd FileType denite hi deniteSource_grepFile guifg=#8FBCBB
+autocmd FileType denite hi deniteSource_grepLineNR guifg=#8FBCBB
+autocmd FileType denite hi deniteGrepPatterns guifg=#EBCB9B guibg=#2E3440
+" autocmd FileType denite hi deniteMatchedChar guifg=#EBCB9B
+" deniteInput    xxx links to ModeMsg
+" deniteMatchedRange xxx links to Underlined
+" deniteMatchedChar xxx links to Search
+" deniteStatusLinePath xxx links to Comment
+" deniteStatusLineNumber xxx links to LineNr
+" deniteSelectedLine xxx links to Statement
+" deniteConcealedMark xxx cleared
+" deniteSourceLine_grep xxx links to Type
+" deniteSource_grep xxx cleared
+" deniteSource_grepHeader xxx cleared
+" deniteGrepPatterns xxx links to Function
+" DeniteFilter   xxx cleared
 
 " use floating
-let s:denite_win_width_percent = 0.85
+let s:denite_win_width_percent = 0.75
 let s:denite_win_height_percent = 0.7
 let s:denite_default_options = {
     \ 'split': 'floating',
@@ -42,8 +62,28 @@ for [key, value] in items(s:denite_default_options)
 endfor
 call denite#custom#option('default', s:denite_default_options)
 
+" Ag command on grep file/rec
 call denite#custom#var('file/rec', 'command',
     \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
     \ [ '.git/', '.ropeproject/', '__pycache__/',
     \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
+
+" Ag command on grep source
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', [])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+
+" Dgrep
+command! -nargs=? Dgrep call s:Dgrep(<f-args>)
+function s:Dgrep(...)
+  if a:0 > 0
+    execute(':Denite -buffer-name=grep-buffer-denite '.join(s:denite_option_array, ' ').' grep -path='.a:1)
+  else
+    execute(':Denite -buffer-name=grep-buffer-denite '.join(s:denite_option_array, ' ').' grep')
+  endif
+endfunction
+
