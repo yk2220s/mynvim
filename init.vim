@@ -28,7 +28,8 @@ let mapleader = ","
 "set verbose=20
 
 " - Color
-autocmd ColorScheme * highlight Comment ctermfg=darkgray
+set termguicolors
+" autocmd ColorScheme * highlight Comment ctermfg=darkgray
 hi Comment ctermfg=darkgray
 hi LineNr ctermfg=250 ctermbg=23
 hi CursorLineNr ctermfg=darkgray ctermbg=43
@@ -40,7 +41,8 @@ hi NonText ctermfg=darkgray
 hi Statement ctermfg=180
 hi MatchParen ctermfg=43 ctermbg=darkgray
 " hi Normal ctermbg=
-hi NormalNC ctermfg=248 ctermbg=232
+autocmd ColorScheme * hi NormalNC ctermfg=248 ctermbg=232 guibg=#2E3440
+autocmd ColorScheme * hi Normal ctermfg=248 ctermbg=232 guibg=#1A202C
 
 " - Window
 set splitbelow

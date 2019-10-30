@@ -1,4 +1,10 @@
 [[plugins]]
+repo = 'arcticicestudio/nord-vim'
+hook_add = '''
+  colorscheme nord
+'''
+
+[[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
   source ~/.config/nvim/plugins/denite.vim
