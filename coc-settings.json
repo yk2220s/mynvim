@@ -1,7 +1,7 @@
 {
   "coc.preferences.jumpCommand": "vsplit",
   "coc.preferences.formatOnSaveFiletypes": [
-    "css", "markdown", "Markdown", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx"
+    "css", "markdown", "Markdown", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx", "ruby", "json"
   ],
   "languageserver": {
     "golang": {
@@ -12,6 +12,10 @@
   },
   "tsserver.enableJavascript": true,
   "solargraph.commandPath": "/usr/local/bin/solargraph",
-  "suggest.noselect":false,
-  "suggest.preferCompleteThanJumpPlaceholder":true
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true,
+  "suggest.noselect": false,
+  "suggest.preferCompleteThanJumpPlaceholder": true
 }

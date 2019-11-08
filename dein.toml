@@ -76,6 +76,9 @@ repo = 'hashivim/vim-terraform'
 repo = 'cespare/vim-toml'
 
 [[plugins]]
+repo = 'ngmy/vim-rubocop'
+
+[[plugins]]
 repo = 'slim-template/vim-slim'
 
 [[plugins]]
