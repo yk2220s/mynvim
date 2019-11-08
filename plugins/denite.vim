@@ -87,3 +87,12 @@ function s:Dgrep(...)
   endif
 endfunction
 
+" Dgrep
+command! -nargs=? Dfile call s:Dfile(<f-args>)
+function s:Dfile(...)
+  if a:0 > 0
+    execute(':Denite '.join(s:denite_option_array, ' ').' file/rec -path='.a:1)
+  else
+    execute(':Denite '.join(s:denite_option_array, ' ').' file/rec')
+  endif
+endfunction

@@ -24,8 +24,8 @@ nnoremap k gk
 let mapleader = ","
 
 " - Log
-"set verbosefile=/tmp/vim.log
-"set verbose=20
+" set verbosefile=/tmp/vim.log
+" set verbose=20
 
 " - Color
 set termguicolors

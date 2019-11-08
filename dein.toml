@@ -34,6 +34,8 @@ merge = 0
 rev = "release"
 build = './install.sh nightly'
 hook_add = '''
+    let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier', 'coc-phpls', 'coc-solargraph', 'coc-stylelint']
+
     command! -nargs=0 Prettier :CocCommand prettier.formatFile
     nnoremap <silent> gh :call <SID>show_documentation()<CR>
     nmap <silent> gd <Plug>(coc-definition)
@@ -48,23 +50,16 @@ hook_add = '''
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
 hook_add = '''
-    hi typescriptFunction ctermfg=43
-    hi typescriptFuncDef ctermfg=43
-    hi typescriptPropietaryMethods ctermfg=43
-    hi typescriptConditional ctermfg=162
-    hi typescriptBranch ctermfg=169
-    hi typescriptParens ctermfg=169
-    hi typescriptBraces ctermfg=169
-    hi typescriptVars ctermfg=209
+    source ~/.config/nvim/plugins/typescript-vim.vim
 '''
 
 [[plugins]]
 repo = 'peitalin/vim-jsx-typescript'
 hook_add = '''
-    hi tsxTagName ctermfg=105
-    hi tsxTag ctermfg=103
-    hi tsxCloseTag ctermfg=103
-    hi tsxCloseString ctermfg=104
+    hi link tsxTagName htmlTag
+    hi link tsxTag htmlTag
+    hi link tsxCloseTag htmlEndTag
+    hi link tsxCloseString htmlEndTag
 '''
 
 [[plugins]]
@@ -79,6 +74,9 @@ repo = 'hashivim/vim-terraform'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
 
 [[plugins]]
 repo = 'chr4/nginx.vim'
