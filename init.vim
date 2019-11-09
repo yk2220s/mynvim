@@ -88,6 +88,7 @@ tnoremap <Esc> <C-\><C-n>
 " Providers
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:node_host_prog = '/usr/local/bin/neovim-node-host'
+let g:ruby_host_prog = '/usr/local/bin/neovim-ruby-host'
 
 " Dein Scripts-----------------------------
 if &compatible
@@ -106,8 +107,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
+  " call dein#add('Shougo/neosnippet.vim')
+  " call dein#add('Shougo/neosnippet-snippets')
   call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
   call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy': 1})
 
