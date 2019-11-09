@@ -87,7 +87,7 @@ function s:Dgrep(...)
   endif
 endfunction
 
-" Dgrep
+" Dfile
 command! -nargs=? Dfile call s:Dfile(<f-args>)
 function s:Dfile(...)
   if a:0 > 0
