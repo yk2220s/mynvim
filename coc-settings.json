@@ -1,7 +1,15 @@
 {
   "coc.preferences.jumpCommand": "vsplit",
   "coc.preferences.formatOnSaveFiletypes": [
-    "css", "markdown", "Markdown", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx", "ruby", "json"
+    "css",
+    "markdown",
+    "Markdown",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "ruby",
+    "json"
   ],
   "languageserver": {
     "golang": {
