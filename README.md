@@ -4,6 +4,7 @@
 
 -   ag
 -   dein
+-   nerd-font (recommended)
 
 ## providers
 
