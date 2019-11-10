@@ -3,6 +3,7 @@
 ## requirement
 
 -   ag
+-   dein
 
 ## providers
 
