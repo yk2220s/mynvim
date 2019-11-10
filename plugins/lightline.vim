@@ -1,22 +1,27 @@
 let g:lightline = {
-      \   'colorscheme': 'one',
+      \   'colorscheme': 'nord',
       \   'active': {
       \     'left': [ [ 'mode', 'paste' ],
       \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
       \     'right': [ [ 'lineinfo' ],
       \                [ 'percent', 'cocstatus' ],
-      \                [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \                [ 'fileencoding', 'filetype' ] ]
       \   },
       \   'inactive': {
+      \     'left': [ [], [ 'gitbranch', 'filename', 'modified' ] ],
       \     'right': [ [ 'lineinfo' ],
       \                [ 'percent', 'cocstatus' ],
-      \                [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \                [ 'filetype' ] ]
       \   },
       \   'component_function': {
       \     'gitbranch': 'fugitive#head',
       \     'cocstatus': 'coc#status'
       \   },
+      \   'separator': { 'left': '', 'right': '' },
+      \   'subseparator': { 'left': '', 'right': '' }
       \ }
+
+" fileformat
 
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
