@@ -5,7 +5,7 @@ let g:lightline = {
       \               [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
       \     'right': [ [ 'lineinfo' ],
       \                [ 'percent', 'cocstatus' ],
-      \                [ 'fileencoding', 'filetype' ] ]
+      \                [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \   },
       \   'inactive': {
       \     'left': [ [], [ 'gitbranch', 'filename', 'modified' ] ],
@@ -14,8 +14,13 @@ let g:lightline = {
       \                [ 'filetype' ] ]
       \   },
       \   'component_function': {
-      \     'gitbranch': 'fugitive#head',
-      \     'cocstatus': 'coc#status'
+      \     'gitbranch': 'LightlineFugitive',
+      \     'cocstatus': 'coc#status',
+      \     'fileformat': 'LightlineFileformat',
+      \     'filetype': 'LightlineFiletype',
+      \     'fileencoding': 'LightlineFileencoding',
+      \     'mode': 'LightlineMode',
+      \     'percent': 'LightlinePercent',
       \   },
       \   'separator': { 'left': '', 'right': '' },
       \   'subseparator': { 'left': '', 'right': '' }
@@ -25,3 +30,31 @@ let g:lightline = {
 
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
+" Custom component
+function! LightlineFugitive()
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    return fugitive#head()
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
+
+function! LightlineMode()
+  return winwidth(0) > 10 ? lightline#mode() : ''
+endfunction
+
+function! LightlinePercent()
+  return winwidth(0) > 70 ? (100 * line('.') / line('$')) . '%' : ''
+endfunction
