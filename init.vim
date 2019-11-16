@@ -32,14 +32,15 @@ set termguicolors
 " autocmd ColorScheme * highlight Comment ctermfg=darkgray
 hi Comment ctermfg=darkgray
 hi LineNr ctermfg=250 ctermbg=23
+hi Cursor guifg=#2E3440
 hi CursorLineNr ctermfg=darkgray ctermbg=43
 hi clear CursorLine
-hi TermCursor ctermfg=white ctermbg=43
+" hi TermCursor ctermfg=white ctermbg=43
 hi Pmenu ctermfg=white ctermbg=63
 hi PmenuSel ctermfg=white ctermbg=gray
 hi NonText ctermfg=darkgray
 hi Statement ctermfg=180
-hi MatchParen ctermfg=43 ctermbg=darkgray
+" hi MatchParen ctermfg=43 ctermbg=darkgray guibg=
 " hi Normal ctermbg=
 autocmd ColorScheme * hi NormalNC ctermfg=248 ctermbg=232 guibg=#2E3440
 autocmd ColorScheme * hi Normal ctermfg=248 ctermbg=232 guibg=#1A202C
