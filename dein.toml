@@ -34,11 +34,7 @@ merge = 0
 rev = "release"
 build = './install.sh nightly'
 hook_add = '''
-    let g:coc_global_extensions = ['coc-html', 'coc-css', 'coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier', 'coc-phpls', 'coc-solargraph', 'coc-stylelint']
-
-    command! -nargs=0 Prettier :CocCommand prettier.formatFile
-    nnoremap <silent> gh :call <SID>show_documentation()<CR>
-    nmap <silent> gd <Plug>(coc-definition)
+    source ~/.config/nvim/plugins/coc.vim
 '''
 
 [[plugins]]
