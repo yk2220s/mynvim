@@ -5,6 +5,8 @@
 -   ag
 -   dein
 -   nerd-font (recommended)
+-   send2trash
+    -   `pip install send2trash`
 
 ## providers
 
