@@ -24,4 +24,5 @@ let g:go_metalinter_autosave = 1
 autocmd FileType go nmap <Leader>t  :<C-u>GoTest!<CR>
 autocmd FileType go nmap <Leader>d  :<C-u>GoDef<CR>
 autocmd FileType go nmap <Leader>p  :<C-u>GoDefPop<CR>
+autocmd FileType go nmap <Leader>i  :<C-u>GoImports<CR>
 
