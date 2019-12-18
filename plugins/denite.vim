@@ -21,6 +21,8 @@ function! s:denite_my_settings() abort
   \ denite#do_map('open_filter_buffer')
   nnoremap <silent><buffer><expr> <Space>
   \ denite#do_map('toggle_select').'j'
+  nnoremap <silent><buffer><expr> a
+  \ denite#do_map('toggle_select_all')
 endfunction
 
 nnoremap [denite] <Nop>
@@ -56,7 +58,7 @@ let s:denite_default_options = {
     \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
     \ 'highlight_filter_background': 'DeniteFilter',
     \ 'prompt': '/ ',
-    \ 'start_filter': v:true,
+    \ 'start_filter': v:false,
     \ }
 let s:denite_option_array = []
 for [key, value] in items(s:denite_default_options)
