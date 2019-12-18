@@ -13,6 +13,8 @@ function! s:denite_my_settings() abort
   \ denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> p
   \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> r
+  \ denite#do_map('do_action', 'quickfix')
   nnoremap <silent><buffer><expr> q
   \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> i
@@ -96,3 +98,11 @@ function s:Dfile(...)
     execute(':Denite '.join(s:denite_option_array, ' ').' file/rec')
   endif
 endfunction
+
+" Dresume
+command! Dresume execute(':Denite -resume -buffer-name=grep-buffer-denite '.join(s:denite_option_array, ' ').'')
+" Dnext
+command! Dnext execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=+1 -immediately '.join(s:denite_option_array, ' ').'')
+" Dprev
+command! Dprev execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=-1 -immediately '.join(s:denite_option_array, ' ').'')
+

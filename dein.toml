@@ -11,6 +11,10 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'thinca/vim-qfreplace'
+on_ft = ['qf']
+
+[[plugins]]
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
