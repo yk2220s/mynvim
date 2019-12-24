@@ -18,9 +18,6 @@ set smartindent
 " set showmode
 set tabstop=4
 set wrap
-nnoremap ; :
-nnoremap j gj
-nnoremap k gk
 let mapleader = ","
 
 " - Log
@@ -69,6 +66,12 @@ nnoremap tn :<C-u>tabnew<CR>
 nnoremap tl gt
 nnoremap th gT
 
+" - NormalMode
+nnoremap ; :
+nnoremap j gj
+nnoremap k gk
+nnoremap d "_d
+
 " - InsertMode
 inoremap <C-c> <Esc>
 inoremap <C-j> <down>
@@ -85,6 +88,9 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap {<CR> {<CR>}<C-o>O
 inoremap [<CR> [<CR>]<C-o>O
 inoremap (<cr> (<CR>)<C-o>O
+
+" - VisualMode
+vnoremap d "_d
 
 " - TerminalMode
 tnoremap <Esc> <C-\><C-n>
