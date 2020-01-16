@@ -85,12 +85,15 @@ inoremap <C-e> <C-o>$
 inoremap <UP> <C-c>gka
 inoremap <DOWN> <C-c>gja
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap {<CR> {<CR>}<C-o>O
 inoremap [<CR> [<CR>]<C-o>O
 inoremap (<cr> (<CR>)<C-o>O
 
 " - VisualMode
 vnoremap d "_d
+vnoremap j gj
+vnoremap k gk
 
 " - TerminalMode
 tnoremap <Esc> <C-\><C-n>
@@ -136,4 +139,4 @@ if dein#check_install()
   call dein#install()
 endif
 
-"End dein Scripts-------------------------
+" End dein Scripts-------------------------
