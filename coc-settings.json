@@ -26,5 +26,6 @@
   "solargraph.formatting": true,
   "solargraph.hover": true,
   "suggest.noselect": false,
-  "suggest.preferCompleteThanJumpPlaceholder": true
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "suggest.snippetIndicator": " ►"
 }
