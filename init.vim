@@ -12,8 +12,10 @@ set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set noswapfile
 set nobackup
 set number
+set pumblend=10
 set shiftwidth=4
 set showcmd
+set signcolumn=yes
 set smartindent
 " set showmode
 set tabstop=4

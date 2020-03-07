@@ -16,6 +16,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gu <Plug>(coc-float-jump)
 inoremap <silent><expr> <C-r> coc#refresh()
 
 function! s:show_documentation()

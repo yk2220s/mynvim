@@ -26,4 +26,4 @@ autocmd FileType go nmap <Leader>t  :<C-u>GoTest!<CR>
 autocmd FileType go nmap <Leader>d  :<C-u>GoDef<CR>
 autocmd FileType go nmap <Leader>p  :<C-u>GoDefPop<CR>
 autocmd FileType go nmap <Leader>i  :<C-u>GoImports<CR>
-
+autocmd FileType go nmap <Leader>f  :<C-u>GoFillStruct<CR>
