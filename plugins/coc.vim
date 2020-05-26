@@ -7,7 +7,8 @@ let g:coc_global_extensions = [
             \   'coc-prettier',
             \   'coc-phpls',
             \   'coc-solargraph',
-            \   'coc-stylelint'
+            \   'coc-stylelint',
+            \   'coc-ultisnips'
             \ ]
 
 " Keymap
@@ -17,6 +18,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gu <Plug>(coc-float-jump)
+vmap <silent> gas <Plug>(coc-codeaction-selected)
+nmap <silent> gas <Plug>(coc-codeaction-selected)
+nmap <silent> gac <Plug>(coc-codeaction)
+nmap <silent> gqf <Plug>(coc-fix-current)
 inoremap <silent><expr> <C-r> coc#refresh()
 
 function! s:show_documentation()
