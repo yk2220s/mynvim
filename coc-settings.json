@@ -1,4 +1,5 @@
 {
+  "codeLens.enable": true,
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.jumpCommand": "vsplit",
   "coc.preferences.formatOnSaveFiletypes": [
@@ -18,6 +19,7 @@
       "rootPatterns": ["go.mod"],
       "filetypes": ["go"],
       "initializationOptions": {
+        "staticcheck": true,
         "usePlaceholders": true
       }
     },
