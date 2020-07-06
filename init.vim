@@ -103,7 +103,7 @@ tnoremap <Esc> <C-\><C-n>
 " Providers
 let g:python3_host_prog = '/usr/local/bin/python3'
 let g:node_host_prog = '/usr/local/bin/neovim-node-host'
-let g:ruby_host_prog = '/usr/local/bin/neovim-ruby-host'
+let g:ruby_host_prog = '$HOME/.rbenv/shims/neovim-ruby-host'
 
 " Dein Scripts-----------------------------
 if &compatible
