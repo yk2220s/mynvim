@@ -21,6 +21,8 @@ let g:go_metalinter_enabled = []
 let g:go_metalinter_autosave_enabled = []
 let g:go_metalinter_autosave = 1
 
+let g:go_gorename_command = "gopls"
+
 autocmd FileType go nmap <Leader>at :<C-u>GoAddTags<CR>
 autocmd FileType go nmap <Leader>t  :<C-u>GoTest!<CR>
 autocmd FileType go nmap <Leader>d  :<C-u>GoDef<CR>
