@@ -20,7 +20,12 @@
       "filetypes": ["go"],
       "initializationOptions": {
         "staticcheck": true,
-        "usePlaceholders": true
+        "usePlaceholders": true,
+        "analyses": {
+          "ST1000": false,
+          "ST1003": true,
+          "ST1005": false
+        }
       }
     },
     "rust": {
@@ -53,6 +58,7 @@
       "initializationOptions": {}
     }
   },
+  "eslint.autoFixOnSave": true,
   "tsserver.enableJavascript": true,
   "solargraph.useBundler": true,
   "solargraph.diagnostics": true,
