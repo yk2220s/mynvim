@@ -1,4 +1,7 @@
 " Settings
+" - Lang
+let $LANG='en_US.UTF-8'
+
 " - Base
 set autoread
 set cmdheight=2
@@ -29,20 +32,20 @@ let mapleader = ","
 " - Color
 set termguicolors
 " autocmd ColorScheme * highlight Comment ctermfg=darkgray
-hi Comment ctermfg=darkgray
-hi LineNr ctermfg=250 ctermbg=23
-hi Cursor guifg=#2E3440
-hi CursorLineNr ctermfg=darkgray ctermbg=43
-hi clear CursorLine
+" hi Comment ctermfg=darkgray
+" hi LineNr ctermfg=250 ctermbg=23
+" hi Cursor guifg=#2E3440
+" hi CursorLineNr ctermfg=darkgray ctermbg=43
+" hi clear CursorLine
 " hi TermCursor ctermfg=white ctermbg=43
-hi Pmenu ctermfg=white ctermbg=63
-hi PmenuSel ctermfg=white ctermbg=gray
-hi NonText ctermfg=darkgray
-hi Statement ctermfg=180
+" hi Pmenu ctermfg=white ctermbg=63
+" hi PmenuSel ctermfg=white ctermbg=gray
+" hi NonText ctermfg=darkgray
+" hi Statement ctermfg=180
 " hi MatchParen ctermfg=43 ctermbg=darkgray guibg=
 " hi Normal ctermbg=
-autocmd ColorScheme * hi NormalNC ctermfg=248 ctermbg=232 guibg=#2E3440
-autocmd ColorScheme * hi Normal ctermfg=248 ctermbg=232 guibg=#1A202C
+" autocmd ColorScheme * hi NormalNC ctermfg=248 ctermbg=232 guibg=#2E3440
+" autocmd ColorScheme * hi Normal ctermfg=248 ctermbg=232 guibg=#1A202C
 
 " - Window
 set splitbelow
@@ -102,7 +105,7 @@ tnoremap <Esc> <C-\><C-n>
 
 " Providers
 let g:python3_host_prog = '/usr/local/bin/python3'
-let g:node_host_prog = '/usr/local/bin/neovim-node-host'
+let g:node_host_prog = '/usr/local/opt/nvm/versions/node/v15.13.0/bin/neovim-node-host'
 let g:ruby_host_prog = '$HOME/.rbenv/shims/neovim-ruby-host'
 
 " Dein Scripts-----------------------------
@@ -126,6 +129,7 @@ if dein#load_state('~/.cache/dein')
   " call dein#add('Shougo/neosnippet-snippets')
   call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
   call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy': 1})
+  let g:dein#auto_recache = 1
 
   " Required:
   call dein#end()
