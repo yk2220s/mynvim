@@ -1,13 +1,7 @@
 [[plugins]]
-repo = 'arcticicestudio/nord-vim'
+repo = 'EdenEast/nightfox.nvim'
 hook_add = '''
-  colorscheme nord
-'''
-
-[[plugins]]
-repo = 'Shougo/denite.nvim'
-hook_add = '''
-  source ~/.config/nvim/plugins/denite.vim
+  colorscheme nordfox
 '''
 
 [[plugins]]
@@ -37,6 +31,16 @@ repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+rev = '0.1.0'
+hook_add = '''
+    source ~/.config/nvim/plugins/telescope.vim
+'''
 
 [[plugins]]
 repo = "neoclide/coc.nvim"
@@ -90,3 +94,7 @@ repo = 'slim-template/vim-slim'
 [[plugins]]
 repo = 'chr4/nginx.vim'
 
+[[plugins]]
+repo = 'iamcco/markdown-preview.nvim'
+on_ft = ['markdown', 'pandoc.markdown', 'rmd']
+build = 'sh -c "cd app && yarn install"'

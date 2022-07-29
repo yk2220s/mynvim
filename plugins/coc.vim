@@ -1,3 +1,6 @@
+" coc
+let g:coc_node_path = '/usr/local/opt/nvm/versions/node/v15.13.0/bin/node'
+
 let g:coc_global_extensions = [
             \   'coc-html',
             \   'coc-css',

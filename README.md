@@ -1,7 +1,10 @@
 # my nvim setting
 
+-   `ln -fns ~/codes/mynvim ~/.config/nvim`
+
 ## requirement
 
+-   ripgrep
 -   ag
 -   dein
 -   nerd-font (recommended)
