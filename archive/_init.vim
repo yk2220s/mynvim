@@ -109,40 +109,40 @@ let g:node_host_prog = '/usr/local/opt/nvm/versions/node/v15.13.0/bin/neovim-nod
 let g:ruby_host_prog = '$HOME/.rbenv/shims/neovim-ruby-host'
 
 " Dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+"if &compatible
+"  set nocompatible               " Be iMproved
+"endif
 
 " Required:
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+"set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
+"if dein#load_state('~/.cache/dein')
+"  call dein#begin('~/.cache/dein')
+"
+"  " Let dein manage dein
+"  " Required:
+"  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+"
+"  " Add or remove your plugins here like this:
+"  " call dein#add('Shougo/neosnippet.vim')
+"  " call dein#add('Shougo/neosnippet-snippets')
+"  call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
+"  call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy': 1})
+"  let g:dein#auto_recache = 1
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+"  " Required:
+"  call dein#end()
+"  call dein#save_state()
+"endif
 
-  " Add or remove your plugins here like this:
-  " call dein#add('Shougo/neosnippet.vim')
-  " call dein#add('Shougo/neosnippet-snippets')
-  call dein#load_toml('~/.config/nvim/dein.toml', {'lazy': 0})
-  call dein#load_toml('~/.config/nvim/dein_lazy.toml', {'lazy': 1})
-  let g:dein#auto_recache = 1
+"" Required:
+"filetype plugin indent on
+"syntax enable
 
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
+"" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
 
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
-" End dein Scripts-------------------------
+"" End dein Scripts-------------------------
