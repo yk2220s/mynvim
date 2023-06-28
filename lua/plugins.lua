@@ -186,4 +186,24 @@ return {
       })
     end,
   },
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function() 
+      local builtin = require('telescope.builtin')
+      local opts = { noremap = true, silent = true }
+      vim.keymap.set('n', '<C-g>', builtin.find_files, opt)
+      vim.keymap.set('n', '<C-f>', builtin.live_grep, opt)
+    end,
+  },
+  {
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 500,
+      },
+    },
+  },
 }
