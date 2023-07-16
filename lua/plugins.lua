@@ -38,6 +38,9 @@ return {
         view = {
           width = 40,
         },
+        filters = {
+          git_ignored = false,
+        },
         on_attach = on_attach,
       })
     end,
@@ -108,22 +111,29 @@ return {
       end
 
       -- managed by mason
-      mason_lspconfig.setup()
+      local servers = {
+        golangci_lint_ls = {},
+      }
+
+      mason_lspconfig.setup({
+        ensure_installed = vim.tbl_keys(servers),
+      })
 
       mason_lspconfig.setup_handlers({ function(server_name)
         nvim_lsp[server_name].setup({
           capabilities = capabilities,
           on_attach = on_attach,
+          settings = servers[server_name],
         })
         end
       })
 
-      -- managed manually
-      local servers = {
+      -- managed manually installed LSP
+      local manual_servers = {
         gopls = {},
       }
 
-      for k, v in pairs(servers) do
+      for k, v in pairs(manual_servers) do
         nvim_lsp[k].setup({
           capabilities = capabilities,
           on_attach = on_attach,
