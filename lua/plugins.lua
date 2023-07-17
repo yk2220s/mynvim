@@ -2,8 +2,52 @@ return {
   {
     'EdenEast/nightfox.nvim',
     config = function()
-      vim.cmd([[colorscheme nordfox]])
+      local C = require("nightfox.lib.color")
+      -- https://github.com/EdenEast/nightfox.nvim/blob/main/lua/nightfox/palette/carbonfox.lua
+      local bg = C("#161616")
+
+      require("nightfox").setup({
+        palettes = {
+          carbonfox = {
+            bg3 = bg:brighten(8):to_css(),
+            bg4 = bg:brighten(28):to_css(),
+            whitespace = bg:brighten(18):to_css(),
+          },
+        },
+        specs = {
+          all = {
+            syntax = {
+              builtin0 = 'pink',
+            },
+          },
+          carbonfox = {
+            variable = 'pal.white.bright'
+          }
+        },
+        groups = {
+          carbonfox = {
+            Whitespace = { fg = "palette.whitespace" },
+          },
+        },
+      })
+
+      vim.cmd([[colorscheme carbonfox]])
     end,
+  },
+  {
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    build = ':TSUpdate',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = { 'go', 'lua', 'vim' },
+        auto_install = false,
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
+    end
   },
   {
     'nvim-tree/nvim-tree.lua',
@@ -214,6 +258,7 @@ return {
       current_line_blame_opts = {
         delay = 500,
       },
+      current_line_blame_formatter = ' <abbrev_sha> <author_time:%Y-%m-%d> <author> - <summary>',
     },
   },
 }

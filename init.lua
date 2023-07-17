@@ -6,12 +6,13 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.autoread = true
 vim.opt.cmdheight = 2
 vim.opt.cursorline = true
+-- vim.opt.cursorcolumn = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 vim.opt.hidden = true
 vim.opt.list = true
-vim.opt.listchars = {tab='»-', trail='-', eol='↲', extends='»', precedes='«', nbsp='%'}
+vim.opt.listchars = {tab='»-', trail='-', eol='↲', extends='»', precedes='«', nbsp='%', space='.'}
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.number = true
