@@ -6,8 +6,7 @@ return {
       -- https://github.com/EdenEast/nightfox.nvim/blob/main/lua/nightfox/palette/carbonfox.lua
       local bg = C("#161616")
 
-      require("nightfox").setup({
-        palettes = {
+      require("nightfox").setup({ palettes = {
           carbonfox = {
             bg3 = bg:brighten(8):to_css(),
             bg4 = bg:brighten(28):to_css(),
@@ -136,6 +135,7 @@ return {
         end, '[G]oto [D]efinition')
         nmap('<leader>i', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
         nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+        nmap('<leader>R', vim.lsp.buf.references, '[R]efercence')
 
         nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
         nmap('<leader>f', vim.lsp.buf.hover, 'Hover Documentation')
@@ -269,7 +269,7 @@ return {
   },
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
+    tag = '0.1.4',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function() 
       local builtin = require('telescope.builtin')
