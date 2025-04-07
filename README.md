@@ -1,6 +1,6 @@
 # my nvim setting
 
-- `brew install neovim ripgrep`
+- `brew install neovim ripgrep luajit`
 - `ln -fns $PWD ~/.config/nvim`
 
 ## requirement
