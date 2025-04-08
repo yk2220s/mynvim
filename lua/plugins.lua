@@ -171,6 +171,7 @@ return {
       local servers = {
         golangci_lint_ls = {
           init_options = {
+            -- v1のオプション, デフォルトがv2のためオーバーライド
             command = { "golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1" } 
           },
         },
