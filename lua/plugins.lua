@@ -115,8 +115,7 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'hrsh7th/cmp-nvim-lsp',
       { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
-      -- TODO: null-ls will be archived, try alternatives
-      'jose-elias-alvarez/null-ls.nvim',
+      'nvimtools/none-ls.nvim',
       'jay-babu/mason-null-ls.nvim',
     },
     config = function()
@@ -170,7 +169,11 @@ return {
 
       -- managed by mason
       local servers = {
-        golangci_lint_ls = {},
+        golangci_lint_ls = {
+          init_options = {
+            command = { "golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1" } 
+          },
+        },
       }
 
       mason_lspconfig.setup({
@@ -178,11 +181,15 @@ return {
       })
 
       mason_lspconfig.setup_handlers({ function(server_name)
-        nvim_lsp[server_name].setup({
+        local cnf = {
           capabilities = capabilities,
           on_attach = on_attach,
-          settings = servers[server_name],
-        })
+        }
+        for key, value in pairs(servers[server_name]) do
+          cnf[key] = value
+        end
+
+        nvim_lsp[server_name].setup(cnf)
         end
       })
 
@@ -192,14 +199,17 @@ return {
       }
 
       for k, v in pairs(manual_servers) do
-        nvim_lsp[k].setup({
+        local cnf = {
           capabilities = capabilities,
           on_attach = on_attach,
-          settings = v,
-        })
+        }
+        for key, value in pairs(servers[server_name]) do
+          cnf[key] = value
+        end
+        nvim_lsp[k].setup(cnf)
       end
 
-      -- null-ls
+      -- none-ls
       local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
       require("null-ls").setup({
         on_attach = function(client, bufnr)
@@ -216,12 +226,14 @@ return {
         end,
       })
 
+      --[[
       require("mason-null-ls").setup({
         ensure_installed = { "gofumpt" },
         automatic_setup = true,
         automatic_installation = false,
         handlers = {},
       })
+      ]]
     end,
   },
   {
