@@ -204,7 +204,7 @@ return {
           capabilities = capabilities,
           on_attach = on_attach,
         }
-        for key, value in pairs(servers[server_name]) do
+        for key, value in pairs(v) do
           cnf[key] = value
         end
         nvim_lsp[k].setup(cnf)
