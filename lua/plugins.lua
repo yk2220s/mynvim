@@ -157,6 +157,12 @@ return {
         nmap('<leader>wl', function()
           print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
         end, '[W]orkspace [L]ist Folders')
+        nmap('<leader>qf', function()
+            vim.lsp.buf.code_action({
+              filter = function(a) return a.isPreferred end,
+              apply = true
+            })
+        end, 'QuickFix')
 
         vim.api.nvim_create_autocmd("BufWritePre", {
           buffer = bufnr,
